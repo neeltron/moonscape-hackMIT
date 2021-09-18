@@ -1,0 +1,51 @@
+.sleepCycle {
+  width: 100%;
+  height: 30vh;
+  background-color: white;
+  width: 97%;
+  margin: 25px auto 0 auto;
+  // border: 1px solid #7a7a7a;
+  border-radius: 1px;
+  position: relative;
+}
+.sleepCycle {
+    border: 1px solid #bdbdbd;
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+  .s-head {
+   text-align: left;
+   margin-left: 10px;
+   margin-top: 10px;
+
+  }
+  .bar-g{
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    width: 34%;
+    transition: 0.3s;
+  }
+  .bar-g:hover{
+  transform: rotate(180deg);
+  }
+
+  .day-data{
+    position: absolute;
+    right: 10px;
+      .d-block{
+          margin-top: 10px;
+      }
+    #s-done {
+        color: #09c4ff;
+      }
+      #s-left {
+        color: #eb09ff;
+      }
+      h3{
+          font-size: 1.4rem;
+      }
+  }
+}

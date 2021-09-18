@@ -1,0 +1,25 @@
+.imageUI{
+height: 4rem;
+width: 97%;    
+position: relative;
+text-align: left;
+padding-top: 10px;
+padding-left: 15px;
+background: radial-gradient(73.3% 1101.17% at 16.35% 62.08%, rgba(27, 219, 189, 0.8) 28.35%, rgba(57, 54, 226, 0) 100%);
+}
+.imageUI{
+
+    img{
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    h2{
+        margin: 0;
+        color: white;
+        font-size: 1.8rem;
+    }
+}
