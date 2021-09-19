@@ -28,6 +28,10 @@
     background-color: #F5F5F5;
     width: 40rem;
     height: 70vh;
+
+    img {
+        width: 60%;
+    }
 }
 .egg-right{
     position: fixed;
@@ -36,6 +40,15 @@
     // background-color: #F5F5F5;
     width: 40rem;
     height: 70vh;  
+
+    button{
+        position: fixed;
+        z-index: 10;
+        top: 90vh;
+        left: 90%;
+        cursor: pointer;
+        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 #canvas{
 	width:600px; 
