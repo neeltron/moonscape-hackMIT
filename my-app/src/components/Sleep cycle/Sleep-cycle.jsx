@@ -4,8 +4,8 @@ import { PieChart } from "react-minimal-pie-chart";
 
 export default function SleepCycle(props) {
 
-  let val_1=Math.floor(Math.random() * 10+1)  
-  let val_2=Math.floor(Math.random() * 7+1)  
+  let val_1=Math.floor(Math.random() * 4+4)  
+  let val_2=8-val_1  
 
 
   console.log(props.date[1]);

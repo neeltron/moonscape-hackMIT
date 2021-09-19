@@ -26,7 +26,6 @@ export default function Left() {
         setSleepD(Sleepdisturbance[Math.floor(Math.random()*4)])
         setAverageHours(Sleepdisturbance[Math.floor(Math.random()*4)])
         setAverageDeepsleep(Sleepdisturbance[Math.floor(Math.random()*4)])
-
     }
 
   return (
