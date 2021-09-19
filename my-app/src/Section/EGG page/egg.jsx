@@ -3,46 +3,26 @@ import "./egg.scss";
 import Wave from "../../components/brain-waves/wave";
 import DiscreteSliderSteps from "../../components/slider/slider";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import LinearIndeterminate from "../../components/loader/loader";
 import model from "./3dmodel.png";
+
 
 class MyBrainWaves extends React.Component {
   componentDidMount() {
-    /**
-     *	Canvas Element and Canvas Context
-     **/
     const canvas = document.getElementById("canvas1");
     const context = canvas.getContext("2d");
-
-    /**
-     *	WaveList to store all the waves in the list
-     *	colors list to allow multiple colors to chose from
-     **/
     const waveList = [];
-
     const load = () => {
-      // Canvas will cover up the entire screen
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-
-      /**
-       *	Clear Method to clear the entire canvas
-       **/
       const clear = () => {
         context.clearRect(0, 0, canvas.width, canvas.height);
       };
-
-      /**
-       *	Clear the canvas and then draw all the waves on the canvas. Utilize requestAnimationFrame for recursion.
-       **/
       const draw = () => {
         clear();
         waveList.forEach((w) => w.redraw());
         requestAnimationFrame(draw);
       };
-
-      /**
-       *	Initialize the appliation
-       **/
       for (let i = 0; i < 6; i++) {
         const multiplier = (3 - i) / 6;
 
@@ -68,14 +48,18 @@ class MyBrainWaves extends React.Component {
   }
 }
 
-class MyEGG extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            start:"trye"
-        };
-      }
+
+class MyEGG extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      start: "Start",
+      loading: 0,
+      opacity:0,
+      check:"No connection"
+    };
+  }
 
   componentDidMount() {
     const canvas = document.getElementById("canvas");
@@ -113,36 +97,36 @@ class MyEGG extends React.Component {
     load();
   }
 
-  handleClick=()=>{
+  handleClick = () => {
     //   alert("Hello")
-      this.setState({
-        start: "False"
-      });
-  }
+    this.setState({
+      start: "End",
+      loading:1,
+      opacity:1,
+      check:"Device connected",
+    });
+  };
 
   render() {
     return (
       <div className="whole">
-        <h2>EEG Device connection</h2>
-
-        <button 
-        onClick={this.handleClick}
-        >{this.state.start}</button>
+        <h2>EEG Device connection:<span id="check">{this.state.check}</span></h2>
+      
+        <button onClick={this.handleClick}>{this.state.start}</button>
 
         <div className="egg-left">
+          {this.state.loading && <LinearIndeterminate />} 
           <img src={model} />
         </div>
         <DiscreteSliderSteps />
 
-        <div className="egg-right">
+        <div className="egg-right"  style={{opacity: this.state.opacity}}>
           {/* <canvas id="canvas"></canvas> */}
-          <MyBrainWaves plot="canvas" />
-          <MyBrainWaves plot="canvas1" />
+        <MyBrainWaves  plot="canvas" />
+        <MyBrainWaves plot="canvas1" />
           <Link to="/deshboard">
             <button>deshboard</button>
           </Link>
-
-          {/* <MyBrainWaves/> */}
         </div>
       </div>
     );

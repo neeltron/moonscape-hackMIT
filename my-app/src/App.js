@@ -5,6 +5,8 @@ import Right from "./Section/Right/right";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {MyEGG} from "./Section/EGG page/egg"
 
+import Home from "./Section/Home-page/home"
+
 function Page() {
   return (
     <Router>
@@ -18,8 +20,11 @@ function Page() {
               <Right />
             </div>
           </Route>
-          <Route path="/">
+          <Route path="/egg">
             <MyEGG/>
+          </Route>
+          <Route path="/">
+            <Home/>
           </Route>
         </Switch>
       </div>
