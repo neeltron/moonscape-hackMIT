@@ -1,0 +1,80 @@
+.whole{
+    position: fixed;
+    top: 15%;
+    left: 6%;
+
+    h2{
+        margin: 0;
+        font-size: 1.8rem;
+    }
+    
+    button {
+        position: absolute;
+        top: 0;
+        left: 33rem;
+        background-color: #0B78DC;
+        width: 7rem;
+        height: 2rem;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 300;
+        border-radius: 3px;
+        border: none;
+    }
+
+}
+.egg-left{
+    position: fixed;
+    top: 23%;
+    background-color: #F5F5F5;
+    width: 40rem;
+    height: 70vh;
+
+    img {
+        width: 60%;
+        margin-top: 30px;
+    }
+}
+#check{
+    color: #09C4FF;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.egg-right{
+    position: fixed;
+    top: 23%;
+    right: 0;
+    // background-color: #F5F5F5;
+    width: 40rem;
+    height: 70vh;  
+
+    button{
+        position: fixed;
+        z-index: 10;
+        top: 90vh;
+        left: 90%;
+        cursor: pointer;
+        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+#canvas{
+	width:600px; 
+  height:450px;
+	display:block;
+    position: fixed;
+  margin:0 auto;
+  top: 2vh;
+  z-index: 1;
+  background:rgb(255, 255, 255);
+}
+#canvas1{
+    position: fixed;
+top:34vh;
+z-index: 1;
+	width:600px; 
+  height:550px;
+	display:block;
+  margin:0 auto;
+  background:rgb(255, 255, 255);
+}

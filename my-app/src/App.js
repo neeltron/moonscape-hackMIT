@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NAVBAR from "./components/navbar/nav";
+import Left from "./Section/Left/left";
+import Right from "./Section/Right/right";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {MyEGG} from "./Section/EGG page/egg"
+
+import Home from "./Section/Home-page/home"
+
+function Page() {
+  return (
+    <Router>
+      <div>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/deshboard">
+            <div>
+              <Left />
+              <Right />
+            </div>
+          </Route>
+          <Route path="/egg">
+            <MyEGG/>
+          </Route>
+          <Route path="/">
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NAVBAR />
+      <Page />
     </div>
   );
 }
